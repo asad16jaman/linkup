@@ -177,7 +177,7 @@
                                                       
                                                         </td>
                                                         <td>{{ $category->name }}</td>
-                                                        <td>{{ $category->description }}</td>
+                                                        <td>{{ substr($category->description,0,50) }}...</td>
                                                         
                                                         <td class="d-flex justify-content-center">
                                                             
@@ -198,6 +198,26 @@
                                                 @endforelse
                                                 </tbody>
                                             </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="d-flex justify-content-end">
+                                                @php
+                                                     $nextCursor = $allCategories->nextCursor()?->encode();
+                                                    $prevCursor = $allCategories->previousCursor()?->encode();
+                                                @endphp
+                                                {{-- Previous Button --}}
+                                                @if($prevCursor)
+                                                    <a href="{{ request()->fullUrlWithQuery(['cursor' => $prevCursor]) }}" class="btn btn-primary p-1">« Previous</a>
+                                                @endif
+
+                                                {{-- Next Button --}}
+                                                @if($nextCursor)
+                                                    <a href="{{ request()->fullUrlWithQuery(['cursor' => $nextCursor]) }}" class="btn btn-primary mx-3 p-1">Next »</a>
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
 

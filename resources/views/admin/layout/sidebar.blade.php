@@ -2,13 +2,14 @@
         <div class="sidebar-logo">
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
-            <a href="index.html" class="logo">
+            <a href="{{ route('admin') }}" class="logo">
               <img
-                src="assets/img/kaiadmin/logo_light.svg"
+                src="{{ asset('storage/'.$company->logo) }}"
                 alt="navbar brand"
                 class="navbar-brand"
                 height="20"
               />
+              <!-- <span style="color:#fff;font-size:10px"></span> -->
             </a>
             <div class="nav-toggle">
               <button class="btn btn-toggle toggle-sidebar">

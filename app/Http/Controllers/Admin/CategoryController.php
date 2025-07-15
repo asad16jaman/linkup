@@ -23,7 +23,7 @@ class CategoryController extends Controller
 
         $searchValue = $request->query("search",null);
         if( $searchValue != null ){
-            $allCategories = Category::where("username","like","%".$searchValue."%")->orderBy('id','desc')->cursorPaginate($numberOfItem);
+            $allCategories = Category::where("name","like","%".$searchValue."%")->orderBy('id','desc')->cursorPaginate($numberOfItem);
         }else{
             $allCategories = Category::orderBy('id','desc')->cursorPaginate($numberOfItem);
         };
