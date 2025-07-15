@@ -3,7 +3,10 @@
 use App\Http\Controllers\admin\CompanyController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\SliderController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SliderController;
+
+
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function(){
@@ -35,6 +38,14 @@ Route::prefix('admin')->group(function(){
     Route::get("/sliders/{id?}",[SliderController::class,"index"])->name("admin.slider");
     Route::post("/sliders/{id?}",[SliderController::class,"store"])->name("admin.slider");
     Route::post("/sliders/{id}/delete",[SliderController::class,"destroy"])->name("admin.slider.delete");
+
+
+    //category url hare
+    Route::get("/category/{id?}",[CategoryController::class,"index"])->name("admin.category");
+    Route::post("/category/{id?}",[CategoryController::class,"store"])->name("admin.category");
+
+    Route::post("/category/{id}/delete",[CategoryController::class,"destroy"])->name("admin.category.delete");
+
 
 
 });

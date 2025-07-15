@@ -44,6 +44,13 @@
                  
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.category') }}">
+                  <i class="fas fa-th-large"></i>
+                  <p>Category</p>
+                 
+                </a>
+              </li>
               
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarLayouts">
@@ -108,27 +115,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#">
-                  <i class="fas fa-th-large"></i>
-                  <p>Categories</p>
-                  <span class="caret"></span>
-                </a>
-                <div class="collapse" id="maps">
-                  <ul class="nav nav-collapse">
-                    <li>
-                      <a href="#">
-                        <span class="sub-item">Add Category</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span class="sub-item">All Categories</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
+              
 
               <li class="nav-item">
                 <a href="#">
