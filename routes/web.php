@@ -2,15 +2,19 @@
 
 use App\Http\Controllers\admin\CompanyController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PhotoGalleryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SliderController;
 
 
+use App\Http\Controllers\VideoGalleryController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function(){
+
     Route::get('/',[DashboardController::class,'index'])->name('admin')->middleware('checkAuth');
     Route::get('/login',[DashboardController::class,'login'])->name('admin.login');
     Route::post('/login',[DashboardController::class,'authenticate'])->name('admin.login');
@@ -46,11 +50,26 @@ Route::prefix('admin')->group(function(){
     Route::post("/category/{id?}",[CategoryController::class,"store"])->name("admin.category");
     Route::post("/category/{id}/delete",[CategoryController::class,"destroy"])->name("admin.category.delete");
 
-    //category url hare
+    //Service Or Product url hare
     Route::get("/product/{id?}",[ProductController::class,"index"])->name("admin.product");
     Route::post("/product/{id?}",[ProductController::class,"store"])->name("admin.product");
     Route::post("/product/{id}/delete",[ProductController::class,"destory"])->name("admin.product.delete");
 
+
+    //Photo Gallery url hare
+    Route::get("/photogallery/{id?}",[PhotoGalleryController::class,"index"])->name("admin.photogallery");
+    Route::post("/photogallery/{id?}",[PhotoGalleryController::class,"store"])->name("admin.photogallery");
+    Route::post("/photogallery/{id}/delete",[ProductController::class,"destory"])->name("admin.photogallery.delete");
+
+    //Video Gallery url hare
+    Route::get("/videogallery/{id?}",[VideoGalleryController::class,"index"])->name("admin.videogallery");
+    Route::post("/videogallery/{id?}",[VideoGalleryController::class,"store"])->name("admin.videogallery");
+    Route::post("/videogallery/{id}/delete",[VideoGalleryController::class,"destory"])->name("admin.videogallery.delete");
+
+    //team url hare
+    Route::get('/teams/{id?}',[TeamController::class,'index'])->name('admin.team');
+    Route::post('/teams/{id?}',[TeamController::class,'store'])->name('admin.team');
+    Route::post('/teams/{id}/delete',[TeamController::class,'destroy'])->name('admin.team.delete');
 
 
 });

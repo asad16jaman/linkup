@@ -55,69 +55,46 @@
 
               <li class="nav-item">
                 <a href="{{ route('admin.product') }}">
-                  <i class="fas fa-box-open"></i>
+                  <i class="fas fa-th-large"></i>
                   <p>Product</p>
                  
                 </a>
               </li>
               
-              
               <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#forms">
-                  <i class="fas fa-tags"></i>
+                <a data-bs-toggle="collapse" href="#sidebarLayouts">
+                  <i class="fas fa-box-open"></i>
                   <p>Gallery</p>
                   <span class="caret"></span>
                 </a>
-                <div class="collapse" id="forms">
+                <div class="collapse" id="sidebarLayouts">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="#">
+                      <a href="{{ route('admin.photogallery') }}">
                         <span class="sub-item">Photo Gallery</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="{{ route('admin.videogallery') }}">
                         <span class="sub-item">Video Gallery</span>
                       </a>
                     </li>
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#tables">
-                  <i class="fas fa-puzzle-piece"></i>
-                  <p>Sub Brands</p>
-                  <span class="caret"></span>
-                </a>
-                <div class="collapse" id="tables">
-                  <ul class="nav nav-collapse">
-                    <li>
-                      <a href="#">
-                        <span class="sub-item">Add Sub Brand</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span class="sub-item">All Sub Brand</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
               
-
               <li class="nav-item">
-                <a href="#">
+                <a href="{{ route('admin.team') }}">
                   <i class="fas fa-shopping-cart"></i>
-                  <p>Orders</p>
-                  <span class="badge badge-success">4</span>
+                  <p>Teams</p>
                 </a>
               </li>
 
               <li class="nav-item">
                 <a href="#">
                   <i class="fas fa-warehouse"></i>
-                  <p>Invoice</p>
+                  <p>Clients</p>
+                  <span class="badge badge-success">4</span>
                 </a>
               </li>
 
@@ -143,8 +120,13 @@
               <li class="nav-item">
                 <a href="#">
                   <i class="fas fa-wallet"></i>
-                  <p>Others</p>
-                 
+                  <p>About Us</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#">
+                  <i class="fas fa-wallet"></i>
+                  <p>Contact</p>
                 </a>
               </li>
               
