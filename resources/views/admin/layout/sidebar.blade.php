@@ -52,44 +52,32 @@
                  
                 </a>
               </li>
-              
+
               <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarLayouts">
+                <a href="{{ route('admin.product') }}">
                   <i class="fas fa-box-open"></i>
-                  <p>Products</p>
-                  <span class="caret"></span>
+                  <p>Product</p>
+                 
                 </a>
-                <div class="collapse" id="sidebarLayouts">
-                  <ul class="nav nav-collapse">
-                    <li>
-                      <a href="#">
-                        <span class="sub-item">Add Products</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span class="sub-item">All Products</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
               </li>
+              
+              
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#forms">
                   <i class="fas fa-tags"></i>
-                  <p>Brands</p>
+                  <p>Gallery</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="forms">
                   <ul class="nav nav-collapse">
                     <li>
                       <a href="#">
-                        <span class="sub-item">Add Brand</span>
+                        <span class="sub-item">Photo Gallery</span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <span class="sub-item">All Brands</span>
+                        <span class="sub-item">Video Gallery</span>
                       </a>
                     </li>
                   </ul>

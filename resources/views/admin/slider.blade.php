@@ -38,7 +38,7 @@
 
             <div class="card">
                 <div class="card-header pt-1 pb-0">
-                    <h4 class="text-center">Create User</h4>
+                    <h4 class="text-center">Create Slider</h4>
                 </div>
                 <form method="post" enctype="multipart/form-data">
                     @csrf

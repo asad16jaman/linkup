@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\CompanyController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SliderController;
@@ -43,8 +44,12 @@ Route::prefix('admin')->group(function(){
     //category url hare
     Route::get("/category/{id?}",[CategoryController::class,"index"])->name("admin.category");
     Route::post("/category/{id?}",[CategoryController::class,"store"])->name("admin.category");
-
     Route::post("/category/{id}/delete",[CategoryController::class,"destroy"])->name("admin.category.delete");
+
+    //category url hare
+    Route::get("/product/{id?}",[ProductController::class,"index"])->name("admin.product");
+    Route::post("/product/{id?}",[ProductController::class,"store"])->name("admin.product");
+    Route::post("/product/{id}/delete",[ProductController::class,"destory"])->name("admin.product.delete");
 
 
 
