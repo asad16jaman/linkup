@@ -23,9 +23,11 @@
         height: 30px;
         object-fit: fill;
     }
-    .headbg > tr > th{
+     .headbg > tr > th{
         background-color: #3c5236;
         color: #fff;
+        padding: 2px !important;
+        margin-bottom: 2px;
     }
 </style>
 @endsection
@@ -38,13 +40,13 @@
 
         <div class="page-inner">
 
-            <div class="card">
+            <div class="card mb-1">
                 <div class="card-header pt-1 pb-0">
                     <h4 class="text-center">Create Gallery</h4>
                 </div>
                 <form method="post" enctype="multipart/form-data">
                     @csrf
-                    <div class="card-body p-3 ">
+                    <div class="card-body px-3 py-1">
                         <div class="row">
 
                             <div class="col-md-8 col-12">

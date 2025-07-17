@@ -26,6 +26,8 @@
     .headbg > tr > th{
         background-color: #3c5236;
         color: #fff;
+        padding: 2px !important;
+        margin-bottom: 2px;
     }
 </style>
 @endsection
@@ -36,13 +38,13 @@
 
         <div class="page-inner">
 
-            <div class="card">
+            <div class="card mb-1">
                 <div class="card-header pt-1 pb-0">
-                    <h4 class="text-center">Create Slider</h4>
+                    <h6 class="text-center">Create Slider</h6>
                 </div>
                 <form method="post" enctype="multipart/form-data">
                     @csrf
-                    <div class="card-body p-3 ">
+                    <div class="card-body p-2 ">
                         <div class="row">
 
                             <div class="col-md-6 col-12">
@@ -95,7 +97,7 @@
                         </div>
 
                         <div class="d-flex justify-content-end">
-                           <input type="submit" value="Submit" class="btn btn-primary me-3 p-2">
+                           <input type="submit" value="Submit" class="btn btn-primary me-3 p-1">
                         </div>
                     </div>
                 </form>
@@ -106,7 +108,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header p-2">
-                            <h5 class="card-title ">Slider Items</h5>
+                            <h6 class="card-title ">Slider Items</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -136,11 +138,11 @@
                                                 aria-describedby="basic-datatables_info">
                                                 <thead class="headbg">
                                                     <tr role="row bg-dark" >
-                                                        <th style="width: 136.031px;">SL NO:</th>
-                                                        <th style="width: 214.469px;">Slider Image</th>
-                                                        <th style="width: 214.469px;">title</th>
-                                                        <th style="width: 214.469px;">description</th>
-                                                        <th style="width: 81.375px;">Action</th>
+                                                        <th style="width: 136.031px;" class="p-1">SL NO:</th>
+                                                        <th style="width: 214.469px;" class="p-1">Slider Image</th>
+                                                        <th style="width: 214.469px;" class="p-1">title</th>
+                                                        <th style="width: 214.469px;" class="p-1">description</th>
+                                                        <th style="width: 81.375px;" class="p-1">Action</th>
                                                     </tr>
                                                 </thead>
 

@@ -87,13 +87,13 @@
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
-                                            <label for="email2">Phone :</label>
+                                            <label for="email2">Profession :</label>
                                             
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-12">
-                                        <input type="text" class="form-control p-1"  name="phone_number" value="{{ $editclient ? $editclient->phone_number : '' }}"
-                                            placeholder="Enter Phone Number">
+                                        <input type="text" class="form-control p-1"  name="profession" value="{{ $editclient ? $editclient->profession : '' }}"
+                                            placeholder="Enter Profession">
                                     </div>
                                 </div>
                         

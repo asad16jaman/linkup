@@ -11,9 +11,15 @@ use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VideoGalleryController;
 
 use Illuminate\Support\Facades\Route;
+
+
+
+Route::get("/",[HomeController::class,"index"])->name("home");
+
 
 Route::prefix('admin')->group(function(){
 
@@ -22,6 +28,7 @@ Route::prefix('admin')->group(function(){
     Route::post('/login',[DashboardController::class,'authenticate'])->name('admin.login');
     Route::get('/logout',[DashboardController::class,'logout'])->name('admin.logout')->middleware('checkAuth');
 
+    
     //registring admin/users
     Route::get('/register',[DashboardController::class,'register'])->name('admin.register');
     Route::post('/register',[DashboardController::class,'store'])->name('admin.register');
@@ -51,6 +58,7 @@ Route::prefix('admin')->group(function(){
     Route::get("/category/{id?}",[CategoryController::class,"index"])->name("admin.category");
     Route::post("/category/{id?}",[CategoryController::class,"store"])->name("admin.category");
     Route::post("/category/{id}/delete",[CategoryController::class,"destroy"])->name("admin.category.delete");
+
 
     //Service Or Product url hare
     Route::get("/product/{id?}",[ProductController::class,"index"])->name("admin.product");

@@ -23,9 +23,11 @@
         height: 30px;
         object-fit: fill;
     }
-    .headbg > tr > th{
+     .headbg > tr > th{
         background-color: #3c5236;
         color: #fff;
+        padding: 2px !important;
+        margin-bottom: 2px;
     }
 
     .productimages {
@@ -67,7 +69,7 @@
 
         <div class="page-inner">
 
-            <div class="card">
+            <div class="card mb-1">
                 <div class="card-header pt-1 pb-0">
                     <h4 class="text-center">Create Service</h4>
                 </div>

@@ -48,7 +48,7 @@
               <li class="nav-item">
                 <a href="{{ route('admin.category') }}">
                   <i class="fas fa-th-large"></i>
-                  <p>Category</p>
+                  <p>Service</p>
                  
                 </a>
               </li>
@@ -56,7 +56,7 @@
               <li class="nav-item">
                 <a href="{{ route('admin.product') }}">
                   <i class="fas fa-th-large"></i>
-                  <p>Product</p>
+                  <p>Project</p>
                  
                 </a>
               </li>

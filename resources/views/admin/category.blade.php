@@ -23,9 +23,11 @@
         height: 30px;
         object-fit: fill;
     }
-    .headbg > tr > th{
+     .headbg > tr > th{
         background-color: #3c5236;
         color: #fff;
+        padding: 2px !important;
+        margin-bottom: 2px;
     }
 </style>
 @endsection
@@ -40,9 +42,9 @@
 
         <div class="page-inner">
 
-            <div class="card">
+            <div class="card mb-1">
                 <div class="card-header pt-1 pb-0">
-                    <h4 class="text-center">Create Category</h4>
+                    <h4 class="text-center">Create Service</h4>
                 </div>
                 <form method="post" enctype="multipart/form-data">
                     @csrf
@@ -55,7 +57,7 @@
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
-                                            <label for="email2">Category Name :</label>
+                                            <label for="email2">Service Name :</label>
                                             
                                         </div>
                                     </div>
@@ -108,7 +110,7 @@
                         </div>
 
                         <div class="d-flex justify-content-end">
-                           <input type="submit" value="Submit" class="btn btn-primary me-3 p-2">
+                           <input type="submit" value="Submit" class="btn btn-primary me-3 p-1">
                         </div>
                     </div>
                 </form>
@@ -119,7 +121,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header p-2">
-                            <h5 class="card-title ">ALL Users</h5>
+                            <h5 class="card-title ">ALL Services</h5>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -160,7 +162,6 @@
                                                         <th style="width: 214.469px;">Picture</th>
                                                         <th style="width: 214.469px;">Name</th>
                                                         <th style="width: 214.469px;">Description</th>
-                                                        
                                                         <th style="width: 81.375px;">Action</th>
                                                     </tr>
                                                 </thead>

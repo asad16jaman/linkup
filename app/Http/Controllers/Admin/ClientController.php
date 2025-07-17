@@ -26,7 +26,7 @@ class ClientController extends Controller
 
     public function store(Request $request,?int $id=null){
 
-        $data = $request->only(['name', 'note','phone_number']);
+        $data = $request->only(['name', 'note','profession']);
         if ($id != null) {
             //user edit section is hare
 

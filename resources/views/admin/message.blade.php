@@ -31,13 +31,16 @@
             background-color: #3c5236;
             color: #fff;
         }
+        .page-inner{
+            
+        }
     </style>
 @endsection
 
 @section('bodyContent')
 
     <div class="container">
-        <div class="page-inner">
+        <div class="page-inner" style="padding:0px 10px!important">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -60,7 +63,7 @@
                                                         <th>Phone</th>
                                                         <th>Email</th>
                                                         <th>Message</th>
-
+                                                        <th>Date</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -68,12 +71,13 @@
                                                 <tbody>
                                                     @forelse($message as $msg)
                                                         <tr role="row" class="odd">
-                                                            <td class="sorting_1">{{ $msg->iteration }}</td>
+                                                            <td class="sorting_1">{{ $loop->iteration }}</td>
                                                             <td>{{ $msg->name }}</td>
                                                             <td>{{ $msg->phone }}</td>
                                                             <td>{{ $msg->email }}</td>
-
+                                                            
                                                             <td>{{ $msg->message }} </td>
+                                                            <td>{{ $msg->created_at->format('d-m-Y h:ia') }}</td>
                                                             <td class="d-flex justify-content-center">
 
                                                                 <form
@@ -92,6 +96,21 @@
                                                     @endforelse
                                                 </tbody>
                                             </table>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            
+
+                                            @if($message->previousPageUrl())
+                                                <a href="{{$message->previousPageUrl()}}" class="btn btn-primary mx-2 p-1">Previous</a>
+                                            @endif
+
+                                            @if($message->nextPageUrl())
+                                                <a href="{{ $message->nextPageUrl() }}" class="btn btn-primary p-1">Next</a>
+                                            @endif
+                                            
+                                            
                                         </div>
                                     </div>
                                 </div>

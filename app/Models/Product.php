@@ -13,5 +13,9 @@ class Product extends Model
     public function category(){
         return $this->belongsTo(Category::class)->select(['id','name']);
     }
+
+    public function image(){
+        return $this->hasOne(ProductImage::class)->latest();
+    }
     
 }
