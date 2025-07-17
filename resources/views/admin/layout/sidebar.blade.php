@@ -91,15 +91,13 @@
               </li>
 
               <li class="nav-item">
-                <a href="#">
+                <a href="{{ route('admin.client') }}">
                   <i class="fas fa-warehouse"></i>
                   <p>Clients</p>
                   <span class="badge badge-success">4</span>
                 </a>
               </li>
 
-              
-              
               @can('viewAny' ,Auth()->user()) 
               <li class="nav-item">
                 <a href="{{ route('admin.users') }}">
@@ -118,13 +116,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#">
+                <a href="{{ route('admin.about') }}">
                   <i class="fas fa-wallet"></i>
                   <p>About Us</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#">
+                <a href="{{ route('admin.message') }}">
                   <i class="fas fa-wallet"></i>
                   <p>Contact</p>
                 </a>

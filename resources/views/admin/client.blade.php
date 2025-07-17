@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-12">
-                                        <input type="text" class="form-control p-1"  name="name" value="{{ $editTeam ? $editTeam->name : "" }}"
+                                        <input type="text" class="form-control p-1"  name="name" value="{{ $editclient ? $editclient->name : '' }}"
                                             placeholder="Enter Full Name">
                                     </div>
                                 </div>
@@ -70,11 +70,11 @@
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
-                                            <label for="bio">Bio</label>
+                                            <label for="bio">Note</label>
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-12">
-                                        <textarea class="form-control"  name="bio" placeholder="" id="comment" rows="3">{{ $editTeam ? $editTeam->bio : "" }}</textarea>
+                                        <textarea class="form-control"  name="note" placeholder="" id="comment" rows="3">{{ $editclient ? $editclient->note : '' }}</textarea>
                                     </div>
                                 </div>
 
@@ -87,22 +87,22 @@
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
-                                            <label for="email2">Designation :</label>
+                                            <label for="email2">Phone :</label>
                                             
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-12">
-                                        <input type="text" class="form-control p-1"  name="designation" value="{{ $editTeam ? $editTeam->designation : "" }}"
-                                            placeholder="Enter Designation">
+                                        <input type="text" class="form-control p-1"  name="phone_number" value="{{ $editclient ? $editclient->phone_number : '' }}"
+                                            placeholder="Enter Phone Number">
                                     </div>
                                 </div>
-
+                        
                                             <div class="row">
                                                 <div class="col-md-12 col-12 d-flex justify-content-center mt-1">
                                                     <label for="imageInput" style="cursor: pointer;">
                                                         <!-- (placeholder) -->
                                                         <img id="previewImage" 
-                                                            src="{{ $editTeam ?  asset('storage/'.$editTeam->photo) : asset('assets/admin/img/demoProfile.png') }}" 
+                                                            src="{{ $editclient ?  asset('storage/'.$editclient->photo) : asset('assets/admin/img/demoProfile.png') }}" 
                                                             alt="Demo Image" 
                                                             class="profileImg"
                                                             style="">
@@ -127,24 +127,24 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header p-2">
-                            <h5 class="card-title ">Team Members</h5>
+                            <h5 class="card-title ">ALL Clients</h5>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                                     <div class="row">
                                         
-                                        <div class="col-sm-12 col-md-6">
+                                        <!-- <div class="col-sm-12 col-md-6">
                                             <div id="basic-datatables_filter" class="dataTables_filter">
                                                 <label class="d-flex justify-content-end">Search:
                                                     <form id="searchform">
-                                                        @csrf
-                                                        <input type="search" value="{{ request()->query('search') }}" name="search" class="form-control form-control-sm"
+                                                       
+                                                        <input type="search" value="" name="search" class="form-control form-control-sm"
                                                             placeholder="" aria-controls="basic-datatables">
                                                     </form>
                                                 </label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -156,8 +156,8 @@
                                                         <th style="width: 136.031px;">SL NO:</th>
                                                         <th style="width: 214.469px;">Picture</th>
                                                         <th style="width: 214.469px;">Name</th>
-                                                        <th style="width: 214.469px;">Designation</th>
-                                                        <th style="width: 214.469px;">Bio</th>
+                                                        <th style="width: 214.469px;">Phone</th>
+                                                        <th style="width: 214.469px;">Note</th>
                                             
                                                         <th style="width: 81.375px;">Action</th>
                                                     </tr>
@@ -167,23 +167,23 @@
 
                                                 
                                                
-                                                @forelse($allteam as $team)
+                                                @forelse($allclient as $team)
                                                     <tr role="row" class="odd" >
                                                         <td class="sorting_1">{{ $loop->iteration }}</td>
                                                         <td>
                                                             <img class="tablepicture" src="{{ $team->photo ?  asset('storage/'.$team->photo ) : asset('assets/admin/img/demoProfile.png') }}" alt="user profile picture">
                                                         </td>
                                                         <td>{{ $team->name }}</td>
-                                                        <td>{{ $team->designation }}</td>
-                                                        <td>{{ substr($team->bio,0,30) }}</td>
+                                                        <td>{{ $team->phone }}</td>
+                                                        <td>{{ substr($team->note,0,20) }}...</td>
                                                         
                                                         <td class="d-flex justify-content-center">
                                                             
-                                                            <a href="{{ route('admin.team',['id'=>$team->id]) }}" class="btn btn-info p-1 me-1">
+                                                            <a href="{{ route('admin.client',['id'=>$team->id]) }}" class="btn btn-info p-1 me-1">
                                                                 <i class="fas fa-edit iconsize"></i>
                                                             </a>
 
-                                                            <form action="{{ route('admin.team.delete',['id' => $team->id]) }}" method="post">
+                                                            <form action="{{ route('admin.client.delete',['id' => $team->id]) }}" method="post">
                                                                 @csrf
                                                                 <!-- <input type="submit" value="Delete"> -->
                                                                  <button type="submit" class="btn btn-danger p-1"><i class="fas fa-trash-alt iconsize"></i></button>
@@ -216,41 +216,8 @@
 
 @push('script')
 <script>
-    function perpageItem(d){
-        let itemNumber = d.value;
-        let baseUrl = "{{ url()->current() }}"; // current route path without query
-
-        const url = new URL(baseUrl, window.location.origin);
-        @foreach(request()->query() as $key => $value)
-            @if($key !== 'numberOfItem')
-                url.searchParams.set('{{ $key }}', '{{ $value }}');
-            @endif
-        @endforeach
-
-        url.searchParams.set('numberOfItem', itemNumber);
-        window.location.href = url.toString();
-    }
-
-
+    
    
-
-    document.getElementById('searchform').addEventListener('submit',function(e){
-        e.preventDefault();
-        let searchValue = e.target['search'].value ; 
-        let baseUrl = "{{ url()->current() }}"; // current route path without query
-
-        const url = new URL(baseUrl, window.location.origin);
-        @foreach(request()->query() as $key => $value)
-            @if($key !== 'search')
-                url.searchParams.set('{{ $key }}', '{{ $value }}');
-            @endif
-        @endforeach
-        console.log('kaj hosce..')
-        url.searchParams.set('search', searchValue);
-        window.location.href = url.toString();
-    })
-
-
     const imageInput = document.getElementById('imageInput');
     const previewImage = document.getElementById('previewImage');
 

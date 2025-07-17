@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\admin\CompanyController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PhotoGalleryController;
 use App\Http\Controllers\Admin\ProductController;
@@ -8,9 +11,8 @@ use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SliderController;
-
-
 use App\Http\Controllers\VideoGalleryController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function(){
@@ -72,4 +74,25 @@ Route::prefix('admin')->group(function(){
     Route::post('/teams/{id}/delete',[TeamController::class,'destroy'])->name('admin.team.delete');
 
 
+    //client url hare
+    Route::get('/clients/{id?}',[ClientController::class,'index'])->name('admin.client');
+    Route::post('/clients/{id?}',[ClientController::class,'store'])->name('admin.client');
+    Route::post('/client/{id}/delete',[ClientController::class,'destroy'])->name('admin.client.delete');
+
+    //about url hare
+    Route::get('/about',[AboutController::class,'index'])->name('admin.about');
+    Route::post('/about',[AboutController::class,'store'])->name('admin.about');
+
+    //Contact url hare
+    Route::get('/contact',[ContactController::class,'index'])->name('admin.message');
+    Route::post('/contact/{id}',[ContactController::class,'destroy'])->name('admin.message.delete');
+
 });
+
+
+
+
+
+// Route::group(['prefix'=> ''], function () {});
+
+
